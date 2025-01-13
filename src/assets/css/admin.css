@@ -1,0 +1,20 @@
+:root {
+  --base-color: #f39800;
+  --bg-color: #060f26;
+  --link-color: #fff;
+  --link-hover-color: yellow;
+  --main-bg-color: #edf0f5;
+  --card-bg-color: #fff;
+  --primary-txt-color: rgb(47, 47, 47);
+  --second-txt-color: #999;
+  --third-txt-color: #aaa;
+  --cover-black-color: rgba(0, 0, 0, 0.1);
+  --cover-white-color: rgba(255, 255, 255, 0.1);
+  --menu-bg-color: rgb(6, 15, 38);
+  --menu-txt-color: rgb(221, 225, 231);
+  --menu-active-bg-color: rgb(15, 27, 58);
+  --menu-active-color: rgb(221, 225, 231);
+  --card-border-color: #eee;
+  --card-border-radius: 8px;
+  --card-border: 1px solid var(--card-border-color);
+}

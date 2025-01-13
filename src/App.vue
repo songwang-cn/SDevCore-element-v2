@@ -1,21 +1,21 @@
 <template>
-  <router-view/>
+  <div id="app">
+    <router-view />
+  </div>
 </template>
 
 <script>
-export default {
-  name: 'App',
-}
-</script>
+let contentTimer = null;
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  background: #fff;
-  color: #2c3e50;
-  width: 100%;
-}
-</style>
+export default {
+  mounted() {},
+  computed: {},
+  watch: {},
+  methods: {},
+  data() {
+    return {
+      show: true,
+    };
+  },
+};
+</script>

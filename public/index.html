@@ -1,17 +1,42 @@
 <!DOCTYPE html>
 <html lang="">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title><%= htmlWebpackPlugin.options.title %></title>
-  </head>
-  <body>
-    <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- <meta name="viewport" content="width=device-width,initial-scale=1.0"> -->
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover,user-scalable=no">
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <title>
+    设备维护云
+  </title>
+
+</head>
+
+<body>
+  <noscript>
+    <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled.
+        Please enable it to continue.</strong>
+  </noscript>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+  <!-- <script>
+    var w = document.documentElement.clientWidth, scale
+    window.onresize = function () {
+      let myBody = document.getElementsByTagName('body')[0]
+      w = document.documentElement.clientWidth;
+      let scale = (600 / w).toFixed(1)
+      if (w > 600) {
+        myBody.setAttribute('style', 'zoom:' + scale + ';height:' + 100 / scale + 'vh;margin: 0 auto;')
+        // location.reload()
+      } else {
+        myBody.setAttribute('style', 'margin: 0 auto;')
+      }
+    }
+    window.onresize()
+  </script> -->
+
+</body>
+
 </html>
