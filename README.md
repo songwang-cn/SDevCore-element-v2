@@ -1,9 +1,24 @@
-# canvas-sign
+# my_nba
 
-canvas签名，生成图片或base64地址。
+## Project setup
+```
+yarn install
+```
 
-[预览地址](http://songwang-cn.gitee.io/canvas-sign)
+### Compiles and hot-reloads for development
+```
+yarn serve
+```
 
-![输入图片说明](src/assets/1.png)
-![输入图片说明](src/assets/2.png)
-![输入图片说明](src/assets/3.png)
+### Compiles and minifies for production
+```
+yarn build
+```
+
+### Lints and fixes files
+```
+yarn lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).

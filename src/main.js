@@ -1,11 +1,17 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import router from './router'
-import ElementPlus from 'element-plus'
+import ElementUI from 'element-plus'
 import 'element-plus/dist/index.css'
+import '@/assets/style/index.css'
+import '@/assets/style/index.css'
+import Router from '@/router/index'
+import apis from "@/axios/apis";
 
-createApp(App)
-    .use(ElementPlus)
-    .use(router)
-    .mount('#app')
+const app = createApp(App)
 
+app.config.globalProperties.$apis = apis
+
+app.use(ElementUI)
+app.use(Router)
+
+app.mount('#app')
