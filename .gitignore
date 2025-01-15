@@ -1,7 +1,7 @@
 .DS_Store
 node_modules
 /dist
-
+SDevCore-element-v2
 
 # local env files
 .env.local

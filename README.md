@@ -1,20 +1,20 @@
-# SDevLibrary-element-v2
+# SDevCore-element-v2
 
 ## 安装教程
 ```
-npm i SDevLibrary-element-v2
+npm i sdevcore-element-v2
 ```
 ## 使用说明
 ### 引入
     ```
     //入口js文件
-    import SDevLibraryElementV2 from 'SDevLibrary-element-v2'
+    import SDevCoreElementV2 from 'sdevcore-element-v2'
 
     //引入组件库样式
-    import 'SDevLibrary-element-v2/index.css'
+    import 'sdevcore-element-v2/index.css'
 
     //使用开发工具
-    Vue.use(SDevLibraryElementV2)
+    Vue.use(SDevCoreElementV2)
     ```
 
 ### 组件
