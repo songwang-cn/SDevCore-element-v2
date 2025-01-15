@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "online": "vue-cli-service build --mode online",
-    "package": "vue-cli-service build --target lib ./src/package/index.js --name index --dest s-library-v2-test"
+    "package": "vue-cli-service build --target lib ./src/package/index.js --name index --dest SDevCore-element-v2"
   },
   "dependencies": {
     "axios": "^0.21.4",
