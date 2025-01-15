@@ -12,7 +12,7 @@ npm i s-dev-library
     <STable :data="data" :columns="columns">
        <template #cloumnKey="{ data }">
           {{ data[columnKey] }}
-       <template>
+       </template>
     </STable>
 2.  STableBar
     <STableBar :search-field-list="searchFieldList" />
