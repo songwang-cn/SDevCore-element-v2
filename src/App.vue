@@ -1,12 +1,8 @@
 <template>
-  <div id="app">
-    <router-view />
-  </div>
+  <router-view />
 </template>
 
 <script>
-let contentTimer = null;
-
 export default {
   mounted() {},
   computed: {},

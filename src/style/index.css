@@ -1,0 +1,12 @@
+@import url('./element.rewrite.css');
+
+::-webkit-scrollbar {
+    width: 6px;
+    background-color: #f1f1f1;
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #ddd;
+    border-radius: 6px;
+}

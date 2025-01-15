@@ -6,8 +6,6 @@ npm i s-dev-library
 
 #### 使用说明
 
-### 组件
-
 1.  STable
     ...
     <STable :data="data" :columns="columns">
@@ -31,27 +29,7 @@ npm i s-dev-library
        <div class="content" />
     </STable>
     ...
-    
-### 工具类
-1.  class DialogHelper
 
-    DialogHelper.show(element, param)
-    DialogHelper.select(element, param)
-    DialogHelper.selectList(element, param)
-
-2.  class FormHelper
-
-    FormHelper.validate(formRef)
-
-3.  class EnumHelper
-
-    EnumHelper.getLabel(enumList, key): string
-    EnumHelper.getColor(enumList, key): string
-    EnumHelper.getByKey(enumList, key): {label: string, key: string, color: string, ...}
-
-4.  class FileHelper
-
-    FileHelper.blob2Excel(blob, name)
 
 
 
