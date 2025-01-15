@@ -9,28 +9,22 @@ npm i s-dev-library
 ### 组件
 
 1.  STable
-    ...
     <STable :data="data" :columns="columns">
        <template #cloumnKey="{ data }">
           {{ data[columnKey] }}
        <template>
     </STable>
-    ...
 2.  STableBar
-    ...
     <STableBar :search-field-list="searchFieldList" />
-    ...
+
 3.  SPage
-    ...
     <SPage :page-data="response" @change="onPageChange" />
-    ...
+
 4.  SBoard
-    ...
     <SBoard :background-img="require('@/assets/bg1.png')">
        <div class="header" />
        <div class="content" />
     </STable>
-    ...
     
 ### 工具类
 1.  class DialogHelper
