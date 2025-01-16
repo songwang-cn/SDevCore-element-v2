@@ -23,7 +23,7 @@ Vue.use(SDevCoreElementV2)
 
 ## 组件
 
-### 1. SBody
+### SBody
 
 ```
 <SBody>
@@ -45,7 +45,7 @@ Vue.use(SDevCoreElementV2)
 </SBody>
 ```
 
-### 2 SPanel
+### SPanel
 
 ```
 <SPanel title="用户列表" hide-title @full-change="onFullChange">
@@ -68,7 +68,7 @@ SPanel配置项/事件
 | hideTitle          | 隐藏头部标题 | boolean        | 默认值：false       |
 | @fullChange          | 全屏状态变化事件 | 参数：isFullscreen        |        |
 
-### 3.  STable
+### STable
 
 ```
 <STable :data="data" :columns="columns">
@@ -117,7 +117,7 @@ STable插槽
 | tableFooter    | 表格底部插槽     |     -- |
 | [columnKey]   |  表格内部列插槽  |   <template #columnKey="{ data }">{{ data }}</template>
 
-### 4.  STableBar
+### STableBar
 
 ```
 <STableBar :search-field-list="searchFieldList" />
@@ -144,7 +144,7 @@ searchField 对象配置
 | labelKey    | string | 指定enumRecord列表的label的key     | 默认值：‘label'                              |
 | childrenKey | string | 指定enumRecord列表的 children的key | 默认值：‘children'                           |
 
-### 5.  SPage
+### SPage
 
 ```
 <SPage :page-data="response" @change="onPageChange" />
@@ -158,7 +158,7 @@ SPage配置项/事件
 | @change          | 分页器change事件 | 参数：pageData        |        |
 
 
-### 6.  SDialog
+### SDialog
 
 ```
 <SDialog title="弹窗" @cancel="onCancel()" @confirm="onConfirm()">
@@ -261,7 +261,7 @@ export default{
 
 
 
-### 7.  SBoard
+### SBoard
 
 ```
 <SBoard :background-img="require('@/assets/bg1.png')">
@@ -271,9 +271,9 @@ export default{
 </STable>
 ```
 
-### 工具类
+## 工具类
 
-#### 1.  class DialogHelper
+### 1.  class DialogHelper
 
 ```
 // 打开弹窗
@@ -286,13 +286,13 @@ DialogHelper.select(element, param)
 DialogHelper.selectList(element, param)
 ```
 
-#### 2.  class FormHelper
+### 2.  class FormHelper
 
 ```
 FormHelper.validate(formRef)
 ```
 
-#### 3.  class EnumHelper
+### 3.  class EnumHelper
 
 ```
 EnumHelper.getLabel(enumList, key)
@@ -300,7 +300,7 @@ EnumHelper.getColor(enumList, key)
 EnumHelper.getByKey(enumList, key)
 ```
 
-#### 4.  class FileHelper
+### 4.  class FileHelper
 
 ```
 FileHelper.blob2Excel(blob, name)
