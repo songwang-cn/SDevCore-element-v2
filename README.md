@@ -60,7 +60,8 @@ Vue.use(SDevCoreElementV2)
     </template>
 </SPanel>
 ```
-#### SPanel配置项/事件 
+SPanel配置项/事件 
+
 | 配置项/事件          | 说明         | 类型          | 描述              |
 | --------------- | ------------ | ------------- | ------------------- |
 | title         | 标题 | string       |       |
@@ -76,7 +77,8 @@ Vue.use(SDevCoreElementV2)
     </template>
 </STable>
 ```
-#### STable组件配置项
+STable组件配置项
+
 | 配置项 |  说明  | 类型 | 示例 |
 | --------    | -------- | -------- | -------- |
 | columns     |  表格列配置项 | Array       | [{key: 'name', label: '姓名'}]    |
@@ -95,7 +97,8 @@ Vue.use(SDevCoreElementV2)
 | autoHeight  |  表格自适应高度   | Boolean     | 默认值: false    |
 | selectList  |  选中列表         | Array     | 默认值: []    |
 
-#### STable事件
+STable事件
+
 | 事件名称 |  说明  | 参数 |
 | --------    | -------- | -------- | 
 | @edit       |  编辑事件    | row |
@@ -104,8 +107,8 @@ Vue.use(SDevCoreElementV2)
 | @select     |  选择事件    | selectList |
 | @onSelect   |  (同select)    | selectList |
 
+STable插槽
 
-#### STable插槽
 | 插槽名称 |  说明  | 示例 |
 | --------    | -------- | ---|
 | tableHeader   |  表格头部插槽 |       -- |
@@ -119,7 +122,8 @@ Vue.use(SDevCoreElementV2)
 ```
 <STableBar :search-field-list="searchFieldList" />
 ```
-#### STableBar配置项 
+STableBar配置项 
+
 | 配置项          | 说明         | 类型          | 示例                |
 | --------------- | ------------ | ------------- | ------------------- |
 | hideAdd         | 隐藏新增按钮 | boolean       | 默认值：false       |
@@ -127,7 +131,8 @@ Vue.use(SDevCoreElementV2)
 | searchFieldList | 搜索对象列表 | [searchField] | 详见searchField配置 |
 | hideSearch                |      隐藏右侧搜索区域        |  boolean             |    默认值：false                 |
 
-#### searchField对象配置 
+searchField 对象配置 
+
 | 配置项 | 类型   | 描述            | 示例 |
 | ------ | ------ | --------------- | ---- |
 | key    | string | 搜索字段的key值 |      |
@@ -144,7 +149,8 @@ Vue.use(SDevCoreElementV2)
 ```
 <SPage :page-data="response" @change="onPageChange" />
 ```
-#### SPage配置项/事件 
+SPage配置项/事件 
+
 | 配置项/事件          | 说明         | 类型          | 描述              |
 | --------------- | ------------ | ------------- | ------------------- |
 | pageData         | 隐藏新增按钮 | boolean       |  必传 ，示例{pageNum: 1, pageSize: 20, total: 999 }     |
@@ -160,8 +166,8 @@ Vue.use(SDevCoreElementV2)
 </SDialog>
 ```
 
+SDialog配置项 
 
-#### SDialog配置项 
 | 配置项 | 说明     | 类型   | 描述        | 
 | ------ | -------- | ------ | ----------- | 
 | title  | 弹窗标题 | string |             |
@@ -171,7 +177,8 @@ Vue.use(SDevCoreElementV2)
 | minHeight | 最小高度     | string | 默认值：500px | 
 | fullable       | 是否支持全屏         | boolean       | 默认值：true             |
 
-#### SDialog事件 
+SDialog事件 
+
 | 事件名    | 描述         |
 | --------- | ------------ |
 | cancel    | 点击取消触发 |
@@ -180,11 +187,12 @@ Vue.use(SDevCoreElementV2)
 | onConfirm  | 同confirm    |
 | fullChange  | 切换全屏是触发             |
 
-#### SDialog使用说明
+SDialog使用说明
+
 SDialog是自定义的DIalog组件，需配合全局工具类 DialogHelper 一起使用
 
 #### 示例
-##### index.vue 主页面
+index.vue 主页面
 ```
 <template>
     <STable data="userList" :columns="columns" @edit="onEditUser"/>
@@ -215,7 +223,8 @@ export default{
 </script>
 
 ```
-##### editView.vue 弹窗页面
+editView.vue 弹窗页面
+
 ```
 <template>
   <SDialog title="编辑弹窗" @cancel="onCancel()" @confirm="onSubmit()">
