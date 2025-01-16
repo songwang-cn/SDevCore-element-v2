@@ -184,6 +184,37 @@ Vue.use(SDevCoreElementV2)
 SDialog是自定义的DIalog组件，需配合全局工具类 DialogHelper 一起使用
 
 #### 示例
+##### index.vue 主页面
+```
+<template>
+    <STable data="userList" :columns="columns" @edit="onEditUser"/>
+</template>
+<script>
+export default{
+    data() {
+        return{
+            userList: [],
+            columns:[
+                {key: 'name'， label: '姓名'},
+                {key: 'age'， label: '年龄'},
+                {key: 'sex'， label: '性别'}
+            ]
+        }
+    },
+    methods: {
+        async getUserList() {
+            this.userList = await $http.userList.post()
+        },
+         async onEditUser() {
+              await this.$DialogHelper.show(SDialog, param)
+              // 刷新列表
+              this.getUserList()
+        }
+    }
+}
+</script>
+
+```
 ##### editView.vue 弹窗页面
 ```
 <template>
@@ -218,37 +249,7 @@ export default{
 
 </script>
 ```
-##### index.vue 主页面
-```
-<template>
-    <STable data="userList" :columns="columns" @edit="onEditUser"/>
-</template>
-<script>
-export default{
-    data() {
-        return{
-            userList: [],
-            columns:[
-                {key: 'name'， label: '姓名'},
-                {key: 'age'， label: '年龄'},
-                {key: 'sex'， label: '性别'}
-            ]
-        }
-    },
-    methods: {
-        async getUserList() {
-            this.userList = await $http.userList.post()
-        },
-         async onEditUser() {
-              await this.$DialogHelper.show(SDialog, param)
-              // 刷新列表
-              this.getUserList()
-        }
-    }
-}
-</script>
 
-```
 
 
 ### 7.  SBoard
