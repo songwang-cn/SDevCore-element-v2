@@ -21,9 +21,9 @@ import 'sdevcore-element-v2/index.css'
 Vue.use(SDevCoreElementV2)
 ```
 
-### 组件
+## 组件
 
-#### 1. SBody
+### 1. SBody
 
 ```
 <SBody>
@@ -45,7 +45,7 @@ Vue.use(SDevCoreElementV2)
 </SBody>
 ```
 
-#### 2 SPanel
+### 2 SPanel
 
 ```
 <SPanel title="用户列表" hide-title @full-change="onFullChange">
@@ -67,7 +67,7 @@ Vue.use(SDevCoreElementV2)
 | hideTitle          | 隐藏头部标题 | boolean        | 默认值：false       |
 | @fullChange          | 全屏状态变化事件 | 参数：isFullscreen        |        |
 
-#### 3.  STable
+### 3.  STable
 
 ```
 <STable :data="data" :columns="columns">
@@ -76,7 +76,7 @@ Vue.use(SDevCoreElementV2)
     </template>
 </STable>
 ```
-##### STable组件配置项
+#### STable组件配置项
 | 配置项 |  说明  | 类型 | 示例 |
 | --------    | -------- | -------- | -------- |
 | columns     |  表格列配置项 | Array       | [{key: 'name', label: '姓名'}]    |
@@ -95,7 +95,7 @@ Vue.use(SDevCoreElementV2)
 | autoHeight  |  表格自适应高度   | Boolean     | 默认值: false    |
 | selectList  |  选中列表         | Array     | 默认值: []    |
 
-##### STable事件
+#### STable事件
 | 事件名称 |  说明  | 参数 |
 | --------    | -------- | -------- | 
 | @edit       |  编辑事件    | row |
@@ -105,7 +105,7 @@ Vue.use(SDevCoreElementV2)
 | @onSelect   |  (同select)    | selectList |
 
 
-##### STable插槽
+#### STable插槽
 | 插槽名称 |  说明  | 示例 |
 | --------    | -------- | ---|
 | tableHeader   |  表格头部插槽 |       -- |
@@ -114,7 +114,7 @@ Vue.use(SDevCoreElementV2)
 | tableFooter    | 表格底部插槽     |     -- |
 | [columnKey]   |  表格内部列插槽  |   <template #columnKey="{ data }">{{ data }}</template>
 
-#### 4.  STableBar
+### 4.  STableBar
 
 ```
 <STableBar :search-field-list="searchFieldList" />
@@ -139,7 +139,7 @@ Vue.use(SDevCoreElementV2)
 | labelKey    | string | 指定enumRecord列表的label的key     | 默认值：‘label'                              |
 | childrenKey | string | 指定enumRecord列表的 children的key | 默认值：‘children'                           |
 
-#### 5.  SPage
+### 5.  SPage
 
 ```
 <SPage :page-data="response" @change="onPageChange" />
@@ -152,7 +152,7 @@ Vue.use(SDevCoreElementV2)
 | @change          | 分页器change事件 | 参数：pageData        |        |
 
 
-#### 6.  SDialog
+### 6.  SDialog
 
 ```
 <SDialog title="弹窗" @cancel="onCancel()" @confirm="onConfirm()">
@@ -251,7 +251,7 @@ export default{
 ```
 
 
-#### 7.  SBoard
+### 7.  SBoard
 
 ```
 <SBoard :background-img="require('@/assets/bg1.png')">
