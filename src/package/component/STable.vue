@@ -164,7 +164,7 @@ export default {
       default: false,
     },
     ctrlWidth: {
-      type: [Number, String],
+      type: Number,
       default: 140,
     },
     editStr: {

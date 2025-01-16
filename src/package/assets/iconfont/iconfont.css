@@ -1,0 +1,59 @@
+@font-face {
+  font-family: "sdevcore"; /* Project id 4525935 */
+  src: url('iconfont.woff2?t=1736996087029') format('woff2'),
+       url('iconfont.woff?t=1736996087029') format('woff'),
+       url('iconfont.ttf?t=1736996087029') format('truetype');
+}
+
+.sdevcore {
+  font-family: "sdevcore" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.s-zhuti:before {
+  content: "\e65e";
+}
+
+.s-shezhi:before {
+  content: "\e600";
+}
+
+.s-xiala:before {
+  content: "\e634";
+}
+
+.s-waiguan:before {
+  content: "\e663";
+}
+
+.s-guanbi:before {
+  content: "\e609";
+}
+
+.s-caidanshouqi:before {
+  content: "\e67f";
+}
+
+.s-quanping:before {
+  content: "\e768";
+}
+
+.s-pingmuquanping:before {
+  content: "\e781";
+}
+
+.s-changyonggoupiaorenshanchu:before {
+  content: "\e645";
+}
+
+.s-xiangqing:before {
+  content: "\e611";
+}
+
+.s-bianji:before {
+  content: "\e8ac";
+}
+

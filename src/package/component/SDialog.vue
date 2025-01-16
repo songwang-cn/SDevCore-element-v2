@@ -28,8 +28,8 @@
       >
         <div class="title">{{ title }}</div>
         <div class="ctrl">
-          <i class="el-icon-full-screen" @click="onFullScreen" />
-          <i class="close el-icon-close" @click="onCancel" />
+          <i :class="`sdevcore s-${isFullScreen ? 'quanping' : 'pingmuquanping'}`" @click="onFullScreen" />
+          <i class="sdevcore s-guanbi" @click="onCancel"/>
         </div>
       </div>
       <div class="content">
@@ -120,6 +120,7 @@ export default {
     },
     onFullScreen() {
       this.isFullScreen = !this.isFullScreen;
+      this.$emit("fullChange", this.isFullScreen);
     },
     dialogMouseMoveEvent(event) {
       if (this.isMoving) {
@@ -154,38 +155,20 @@ export default {
   justify-content: center;
   align-items: center;
 
-  @keyframes mask-fade-off {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
-  }
-
-  &.mask-closing {
-    animation: mask-fade-off 0.3s ease-in-out forwards;
-  }
-
   @keyframes dialog-in {
     0% {
       opacity: 0;
-      transform: translateY(50px);
+      transform: scale(0.8);
     }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
 
-  @keyframes dialog-out {
-    0% {
+    50% {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+
+    100% {
       opacity: 1;
       transform: scale(1);
-    }
-    100% {
-      opacity: 0;
-      transform: scale(0.5);
     }
   }
 
@@ -208,13 +191,10 @@ export default {
       border-radius: 0;
     }
 
-    &.closing {
-      animation: dialog-out 0.3s;
-    }
-
     .a-dialog-header {
       display: flex;
-      padding: 12px 20px;
+      align-items: center;
+      padding: 10px;
       justify-content: space-between;
       border-bottom: 1px solid #eee;
 
@@ -225,9 +205,11 @@ export default {
 
       .ctrl {
         cursor: pointer;
-        i {
-          font-size: 20px;
+        *{
           margin-left: 10px;
+          &:hover{
+            color: #409eff;
+          }
         }
       }
     }
@@ -235,7 +217,7 @@ export default {
     .content {
       flex: 1;
       height: 0;
-      padding: 10px 20px;
+      padding: 15px;
       overflow-y: auto;
       display: flex;
       flex-direction: column;
