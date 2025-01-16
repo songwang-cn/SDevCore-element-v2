@@ -71,7 +71,6 @@ export default {
 
 <style scoped>
 .s-page{
-  padding: 10px 0;
   display: flex;
   justify-content: flex-end;
 }

@@ -1,12 +1,13 @@
 <template>
-  <div class="library">
-    <SGroup title="表格">
+  <SPanel title="用户列表">
+    <template #body>
       <STableBar :search-field-list="searchFieldList" @add="onAdd" />
       <STable :columns="column" :data="tableList" />
+    </template>
+    <template #footerRight>
       <SPage />
-    </SGroup>
-    <SGroup title="表格"></SGroup>
-  </div>
+    </template>
+  </SPanel>
 </template>
 <script>
 import Edit from "./edit.vue";

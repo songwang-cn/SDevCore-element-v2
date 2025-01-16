@@ -1,3 +1,6 @@
+import "./assets/style/index.css";
+import "./assets/iconfont/iconfont.css";
+
 /**
  * @description 引入所有组件
  */
