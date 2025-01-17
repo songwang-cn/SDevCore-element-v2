@@ -55,15 +55,9 @@ export default {
         {
           icon: "el-icon-s-tools",
           name: "用户列表",
-          path: "/user",
+          path: "/",
           component: "user/index",
-        },
-        {
-          icon: "el-icon-s-tools",
-          name: "设备列表",
-          path: "/device",
-          component: "device/index",
-        },
+        }
       ];
       localStorage.setItem("menuTree", JSON.stringify(this.menuTree));
       this.addRoute(this.menuTree);

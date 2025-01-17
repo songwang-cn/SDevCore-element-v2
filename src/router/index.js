@@ -12,14 +12,8 @@ export const routes = [
       {
         icon: "el-icon-s-tools",
         name: "用户列表",
-        path: "user",
+        path: "/",
         component: () => import("@/views/user/index.vue"),
-      },
-      {
-        icon: "el-icon-s-tools",
-        name: "设备列表",
-        path: "device",
-        component: () => import("@/views/device/index.vue"),
       },
       {
         path: ":catchAll(.*)",
