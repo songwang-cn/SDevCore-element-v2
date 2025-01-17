@@ -120,7 +120,12 @@ STable插槽
 ### STableBar
 
 ```
-<STableBar :search-field-list="searchFieldList" />
+<STableBar 
+    :search-field-list="searchFieldList" 
+    search-immediate
+    @search="onSearch"
+    @reset="onReset"
+/>
 ```
 STableBar配置项 
 
@@ -129,6 +134,7 @@ STableBar配置项
 | hideAdd         | 隐藏新增按钮 | boolean       | 默认值：false       |
 | addStr          | 新增按钮文字 | string        | 默认值：添加        |
 | searchFieldList | 搜索对象列表 | [searchField] | 详见searchField配置 |
+| searchImmediate | 搜索立即执行 | boolean       | 默认值：false       |
 | hideSearch                |      隐藏右侧搜索区域        |  boolean             |    默认值：false                 |
 
 searchField 对象配置 

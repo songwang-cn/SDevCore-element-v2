@@ -9,4 +9,18 @@ module.exports = {
   },
   productionSourceMap: false,
   publicPath: "/",
+  //热更新
+  devServer: {
+    hot: true,
+    port: 8899,
+    // proxy: {
+    //   "/api": {
+    //     target: "http://localhost:3000",
+    //     changeOrigin: true,
+    //     pathRewrite: {
+    //       "^/api": "",
+    //     },
+    //   },
+    // },
+  },
 };

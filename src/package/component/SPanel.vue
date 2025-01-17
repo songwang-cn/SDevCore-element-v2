@@ -61,6 +61,18 @@ export default {
   background: #fff;
   border-radius: 5px;
   box-shadow: 0 0 10px #ddd;
+  animation: panel-in 0.3s ease;
+
+  @keyframes panel-in {
+    0% {
+      transform: translateX(20px);
+      opacity: 0.5;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
 
   &.fullscreen {
     position: fixed;
@@ -84,7 +96,7 @@ export default {
       * {
         cursor: pointer;
         &:hover {
-          color: #409eff;
+          color: var(--theme-color);
         }
       }
     }

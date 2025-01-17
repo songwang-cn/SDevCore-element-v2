@@ -48,7 +48,7 @@
           <slot :name="column.key" :data="scope.row">
             <!-- formatter 时间类型格式化标识 -->
             <span v-if="column.formatter">
-              {{formatTime(scope.row[column.key], column.formatter)}}
+              {{ formatTime(scope.row[column.key], column.formatter) }}
             </span>
             <!-- enumRecord 枚举类标识 -->
             <span
@@ -83,27 +83,23 @@
         <template slot-scope="scope">
           <span class="actions">
             <slot name="actionBefore" :data="scope.row" :index="scope.$index" />
-            <el-button
-              v-if="!hideEdit"
-              type="text"
-              @click="onEdit(scope.row)"
-              >{{ editStr }}</el-button
-            >
+            <el-button v-if="!hideEdit" type="text" @click="onEdit(scope.row)">
+              {{ editStr }}
+            </el-button>
             <el-button
               v-if="showDetail"
               type="text"
               @click="onDetail(scope.row)"
-              >{{ detailStr }}</el-button
             >
-            <el-popconfirm
-              title="确定删除吗？"
+              {{ detailStr }}
+            </el-button>
+            <el-button
+              type="text"
               v-if="!hideDelete"
-              @confirm="onDelete(scope.row)"
+              @click="onDelete(scope.row)"
             >
-              <el-button slot="reference" type="text" style="margin: 0 5px">{{
-                deleteStr
-              }}</el-button>
-            </el-popconfirm>
+              {{ deleteStr }}
+            </el-button>
             <slot name="actionEnd" :data="scope.row" :index="scope.$index" />
           </span>
         </template>
@@ -119,7 +115,7 @@
 import dayjs from "dayjs";
 
 export default {
-  name: 'STable',
+  name: "STable",
   props: {
     columns: {
       type: Array,
@@ -189,8 +185,7 @@ export default {
     },
   },
   data() {
-    return {
-    };
+    return {};
   },
   methods: {
     formatTime(time, formatter) {
