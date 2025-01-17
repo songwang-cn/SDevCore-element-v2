@@ -3,6 +3,7 @@
     :class="['a-dialog-mask', isClosing && 'mask-closing']"
     @mouseup="dialogMouseUpEvent()"
     @mousemove="dialogMouseMoveEvent($event)"
+    @click.self="onMaskClick"
   >
     <div
       :id="randId"
@@ -71,6 +72,10 @@ export default {
       type: Boolean,
       default: true,
     },
+    closeByMask:{
+      type: Boolean,
+      default: true
+    }
   },
 
   data() {
@@ -96,6 +101,11 @@ export default {
     async onConfirm() {
       this.$emit("onConfirm");
       this.$emit("confirm");
+    },
+    onMaskClick() {
+      if(this.closeByMask) {
+        this.onCancel()
+      }
     },
     dialogMouseDownEvent(event) {
       if (this.isFullScreen) {
