@@ -182,6 +182,7 @@ SDialog配置项
 | minWidth  | 最小宽度     | string | 默认值：500px |
 | minHeight | 最小高度     | string | 默认值：500px | 
 | fullable       | 是否支持全屏         | boolean       | 默认值：true             |
+|closeByMask | 点击遮罩是否关闭弹窗         | boolean       | 默认值：true             |
 
 SDialog事件 
 
@@ -318,7 +319,7 @@ this.$FileHelper.blob2Excel(blob, name)
 /**
  * 获取主题色 
  */
-this.$ThemeHelper.getThemeColor(font)
+this.$ThemeHelper.getThemeColor()
 /**
  * 设置主题色 仅支持16进制
  */
