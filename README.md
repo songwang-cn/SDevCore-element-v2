@@ -318,7 +318,7 @@ this.$FileHelper.blob2Excel(blob, name)
 /**
  * 获取主题色 
  */
-this.$ThemeHelper.getThemeColor(font)
+this.$ThemeHelper.getThemeColor()
 /**
  * 设置主题色 仅支持16进制
  */
