@@ -208,7 +208,7 @@ export default {
         *{
           margin-left: 10px;
           &:hover{
-            color: #409eff;
+            color: var(--theme-color);
           }
         }
       }

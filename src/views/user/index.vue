@@ -1,8 +1,21 @@
 <template>
   <SPanel title="用户列表">
     <template #body>
-      <STableBar :search-field-list="searchFieldList" @add="onAdd" />
-      <STable :columns="column" :data="tableList" />
+      <STableBar
+        :search-field-list="searchFieldList"
+        @add="onAdd"
+        search-immediate
+        @search="onSearch"
+      />
+      <STable
+        :columns="column"
+        :data="tableList"
+        show-detail
+        @edit="onEdit"
+        @detail="onDetail"
+        @delete="onDelete"
+      />
+      <router-view />
     </template>
     <template #footerRight>
       <SPage />
@@ -11,6 +24,8 @@
 </template>
 <script>
 import Edit from "./edit.vue";
+import Detail from "./detail.vue";
+
 export default {
   data() {
     return {
@@ -50,13 +65,34 @@ export default {
       ],
       searchFieldList: [
         { label: "姓名", key: "name", type: "input" },
-        { label: "性别", key: "sex", type: "select" },
+        {
+          label: "性别",
+          key: "sex",
+          type: "select",
+          enumRecord: [
+            { key: 1, label: "男" },
+            { key: 0, label: "女" },
+          ],
+        },
       ],
     };
   },
   methods: {
     onAdd() {
       this.$DialogHelper.show(Edit);
+    },
+    onEdit(row) {
+      debugger;
+      this.$DialogHelper.show(Edit, row);
+    },
+    onSearch(searchForm) {
+      this.$message.warning(`搜索事件 参数---${JSON.stringify(searchForm)}`);
+    },
+    onDetail(row) {
+      this.$DialogHelper.show(Detail, row);
+    },
+    onDelete(row) {
+      this.$message.warning("删除");
     },
   },
   created() {},

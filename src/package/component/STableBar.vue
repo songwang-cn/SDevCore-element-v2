@@ -28,7 +28,7 @@
           :key="field.key"
           v-model="searchForm[field.key]"
           :placeholder="field.placeholder || `请选择${field.label}`"
-          @change="onSearch"
+          @change="onValueChange"
         >
           <el-option
             v-for="item of field.enumRecord"
@@ -44,7 +44,7 @@
           v-model="searchForm[field.key]"
           :options="field.enumRecord"
           :show-all-levels="false"
-          @change="onSearch"
+          @change="onValueChange"
           :props="{
             label: field.labelKey || 'name',
             value: field.valueKey || 'id',
@@ -64,7 +64,7 @@
           :value-format="field.valueFormat || 'yyyy-MM-DD'"
           clearable
           @clear="onSearch"
-          @change="onSearch"
+          @change="onValueChange"
         />
         <el-date-picker
           v-if="field.type === 'dateeange'"
@@ -77,7 +77,7 @@
           :value-format="field.valueFormat || 'yyyy-MM-DD'"
           clearable
           @clear="onSearch"
-          @change="onSearch"
+          @change="onValueChange"
         />
       </template>
       <span class="search_action">
@@ -108,6 +108,11 @@ export default {
       type: Boolean,
       default: false,
     },
+    //条件变化后立即搜索
+    searchImmediate: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
@@ -115,6 +120,11 @@ export default {
     }
   },
   methods: {
+    onValueChange() {
+      if(this.searchImmediate){
+        this.onSearch()
+      }
+    },
     onSearch() {
       this.$emit('search', this.searchForm)
     },

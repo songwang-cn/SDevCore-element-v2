@@ -17,7 +17,7 @@
     </div>
     <div class="right">
       <div class="header">
-        <slot name="header" />
+          <slot name="header" />
       </div>
       <div class="content">
         <slot name="main"/>
@@ -40,8 +40,6 @@ export default {
   margin: 0;
 
   .side {
-    width: 220px;
-    background: #fff;
     display: flex;
     flex-direction: column;
 
@@ -50,12 +48,15 @@ export default {
       display: flex;
       align-items: center;
       justify-content: center;
+      color: #fff;
+      background: var(--theme-color);
     }
 
     .menu{
       height: 0;
       flex: 1;
-      background: #f1f1f1;
+      display: flex;
+      flex-direction: column;
     }
   }
 
@@ -64,7 +65,6 @@ export default {
     flex: 1;
     display: flex;
     flex-direction: column;
-    border-left: 1px solid #ddd;
 
     .header {
       height: 50px;
@@ -72,6 +72,7 @@ export default {
       display: flex;
       align-items: center;
       padding: 0 10px;
+      background: var(--theme-color);
     }
 
     .content{

@@ -1,12 +1,15 @@
 @import url('./element.rewrite.css');
+@import url('./theme.css');
+@import url('../iconfont/iconfont.css');
 
 ::-webkit-scrollbar {
     width: 6px;
-    background-color: #f1f1f1;
+    height: 6px;
+    background-color: rgba(0,0,0,.04);
     border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #ddd;
+    background-color: rgba(0,0,0,.08);
     border-radius: 6px;
 }

@@ -3,25 +3,35 @@ import VueRouter from "vue-router";
 
 Vue.use(VueRouter);
 
-const routes = [
+export const routes = [
   {
     path: "/",
-    name: "首页",
-    component: () => import("@/views/userList/index"),
-    meta: { title: "首页" },
-  },
-  {
-    path: "/dashboard",
-    name: "看板",
-    component: () => import("@/views/dashboard/index"),
-    meta: { title: "看板" },
+    name: "main",
+    component: () => import("@/body/main.vue"),
+    children: [
+      {
+        icon: "el-icon-s-tools",
+        name: "用户列表",
+        path: "user",
+        component: () => import("@/views/user/index.vue"),
+      },
+      {
+        icon: "el-icon-s-tools",
+        name: "设备列表",
+        path: "device",
+        component: () => import("@/views/device/index.vue"),
+      },
+      {
+        path: ":catchAll(.*)",
+        component: () => import("../404.vue"),
+      },
+    ],
   },
 ];
 
 const router = new VueRouter({
   mode: "history",
-  // mode: 'hash',
-  base: process.env.BASE_URL,
+  env: process.env.NODE_ENV,
   routes,
 });
 

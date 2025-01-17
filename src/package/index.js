@@ -1,6 +1,3 @@
-import "./assets/style/index.css";
-import "./assets/iconfont/iconfont.css";
-
 /**
  * @description 引入所有组件
  */
@@ -11,9 +8,11 @@ const requireComponent = require.context("./component", true, /\.vue$/);
  */
 const requireHelpers = require.context("./helper", true, /\.js$/);
 
-const install = function(Vue) {
+const defaultThemeColor = localStorage.getItem("--theme-color") || "#409EFF";
+const install = function(Vue, themeColor = defaultThemeColor) {
   if (install.installed) return;
   install.installed;
+
   /**
    * components
    * 批量注册组件
@@ -32,6 +31,8 @@ const install = function(Vue) {
     const helperClassName = Object.keys(helperModule)[0];
     Vue.prototype[`$${helperClassName}`] = helperModule[helperClassName];
   });
+
+  Vue.prototype.$ThemeHelper.setThemeColor(themeColor);
 };
 
 // 环境监测 确保是vue环境

@@ -120,7 +120,12 @@ STable插槽
 ### STableBar
 
 ```
-<STableBar :search-field-list="searchFieldList" />
+<STableBar 
+    :search-field-list="searchFieldList" 
+    search-immediate
+    @search="onSearch"
+    @reset="onReset"
+/>
 ```
 STableBar配置项 
 
@@ -129,6 +134,7 @@ STableBar配置项
 | hideAdd         | 隐藏新增按钮 | boolean       | 默认值：false       |
 | addStr          | 新增按钮文字 | string        | 默认值：添加        |
 | searchFieldList | 搜索对象列表 | [searchField] | 详见searchField配置 |
+| searchImmediate | 搜索立即执行 | boolean       | 默认值：false       |
 | hideSearch                |      隐藏右侧搜索区域        |  boolean             |    默认值：false                 |
 
 searchField 对象配置 
@@ -268,7 +274,7 @@ export default{
 
    <!--看板内容区域，内部使用绝对定位控制元素块位置即可-->
 
-</STable>
+</SBoard>
 ```
 
 ## 工具类
@@ -277,31 +283,44 @@ export default{
 
 ```
 // 打开弹窗
-DialogHelper.show(element, param)
+this.$DialogHelper.show(element, param)
 
 // 打开单选弹窗
-DialogHelper.select(element, param)
+this.$DialogHelper.select(element, param)
 
 // 打开多选弹窗
-DialogHelper.selectList(element, param)
+this.$DialogHelper.selectList(element, param)
 ```
 
 ### 2.  class FormHelper
 
 ```
-FormHelper.validate(formRef)
+this.$FormHelper.validate(formRef)
 ```
 
 ### 3.  class EnumHelper
 
 ```
-EnumHelper.getLabel(enumList, key)
-EnumHelper.getColor(enumList, key)
-EnumHelper.getByKey(enumList, key)
+this.$EnumHelper.getLabel(enumList, key)
+this.$EnumHelper.getColor(enumList, key)
+this.$EnumHelper.getByKey(enumList, key)
 ```
 
 ### 4.  class FileHelper
 
 ```
-FileHelper.blob2Excel(blob, name)
+this.$FileHelper.blob2Excel(blob, name)
+```
+
+### 5.  class ThemeHelper
+
+```
+/**
+ * 获取主题色 
+ */
+this.$ThemeHelper.getThemeColor(font)
+/**
+ * 设置主题色 仅支持16进制
+ */
+this.$ThemeHelper.setThemeColor(color)
 ```
