@@ -1,0 +1,25 @@
+{
+  "name": "sdevcore-element-v2",
+  "version": "1.0.8",
+  "description": "vue2 + element-ui toB 快速开发 组件库/工具库 多尺寸大屏适配 主题切换 ",
+  "main": "index.common.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/songwang-cn/sdevcore-element-v2.git"
+  },
+  "keywords": [
+    "vue2",
+    "+",
+    "element-ui",
+    "toB",
+    "快速开发",
+    "组件库/工具库",
+    "多尺寸大屏适配",
+    "主题切换"
+  ],
+  "author": "songwang",
+  "license": "ISC"
+}

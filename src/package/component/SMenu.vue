@@ -5,6 +5,7 @@
     unique-opened
     :collapse="collapse"
     collapse-transition
+    :default-active="$route.path"
   >
     <SChildMenu :menuTree="menuTree" />
   </el-menu>

@@ -19,6 +19,7 @@
             <i class="sdevcore s-caidanshouqi" />
           </div>
         </div>
+        {{ $route.path }}
         <!-- <span>5202年了,还有公司用vue2</span> -->
         <div class="h_right">
           <el-color-picker
@@ -38,7 +39,7 @@
 export default {
   data() {
     return {
-      menuTree: [],
+      menuTree: JSON.parse(localStorage.getItem("menuTree") || []),
       collapse: false,
       themeColor: this.$ThemeHelper.getThemeColor(),
     };
@@ -50,32 +51,6 @@ export default {
     onConfig() {
       this.$DialogHelper.show(Config);
     },
-    async getMenuData() {
-      this.menuTree = [
-        {
-          icon: "el-icon-s-tools",
-          name: "用户列表",
-          path: "/",
-          component: "user/index",
-        }
-      ];
-      localStorage.setItem("menuTree", JSON.stringify(this.menuTree));
-      this.addRoute(this.menuTree);
-    },
-    addRoute(menuList) {
-      menuList.forEach((menu) => {
-        if (menu.children && menu.children.length) {
-          this.addRoute(menu.children);
-        } else {
-          this.$router.addRoute("main", {
-            path: menu.path,
-            name: menu.name,
-            component: () => import(`@/views/${menu.component}.vue`),
-          });
-        }
-      });
-    },
- 
   },
 };
 </script>
