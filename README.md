@@ -11,14 +11,29 @@ npm  i  sdevcore-element-v2
 ### 引入
 
 ```
+import ElementUI from "element-ui";
+import "element-ui/lib/theme-chalk/index.css";
+
 //入口js文件
-import SDevCoreElementV2 from 'sdevcore-element-v2'
+import SC from 'sdevcore-element-v2'
 
 //引入组件库样式
 import 'sdevcore-element-v2/index.css'
 
+
+//依赖element组件库
+Vue.use(ElementUI, {
+  size: "mini",
+});
+
 //使用开发工具
-Vue.use(SDevCoreElementV2)
+Vue.use(SC);
+
+/**
+ * 支持传入主题色配置, 必须为 16进制 颜色值
+ */
+// Vue.use(SC, '#f39800');
+
 ```
 
 ## 组件

@@ -1,6 +1,5 @@
 import Router from "vue-router";
 import Vue from "vue";
-import { MenuHelper } from "../package/helper/MenuHelper";
 
 Vue.use(Router);
 
@@ -19,6 +18,24 @@ const router = new Router({
   mode: "history",
   env: process.env.NODE_ENV,
 });
+
+function addAsyncRoute(menuList) {
+  menuList.forEach((menu) => {
+    if (menu.children && menu.children.length) {
+      addAsyncRoute(menu.children);
+    } else {
+      router.addRoute("main", {
+        path: menu.path,
+        name: menu.name,
+        component: () => import(`@/views/${menu.component}.vue`),
+      });
+    }
+  });
+}
+function initAsyncRoute(menuList) {
+  localStorage.setItem("menuTree", JSON.stringify(menuList));
+  addAsyncRoute(menuList);
+}
 
 router.beforeEach((to, from, next) => {
   if (router.getRoutes().some((item) => item.name === to.name)) {
@@ -49,7 +66,7 @@ router.beforeEach((to, from, next) => {
         component: "dashboard/index",
       },
     ];
-    MenuHelper.initAsyncRoute(asyncMenuTree);
+    initAsyncRoute(asyncMenuTree);
     next(to);
   }
 });
